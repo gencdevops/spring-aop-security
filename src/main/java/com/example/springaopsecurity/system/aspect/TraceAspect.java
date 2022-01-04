@@ -14,12 +14,6 @@ public class TraceAspect {
         System.out.println("before execution jointPoint");
     }
 
-    public static void test() {
 
-    }
-
-    public static void test()2 {
-
-    }
 
 }
