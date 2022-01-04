@@ -7,7 +7,16 @@ import org.springframework.stereotype.Service;
 public class SalesServiceImpl implements SalesService  {
     @Override
     public String performSomething(String input) {
-        String output = "Satis yapiliyor : " + input;
-        return output;
+      return "Perform Something : " + input;
+    }
+
+    @Override
+    public String performAnother(String input) {
+        return "Perform Another : " + input;
+    }
+
+    @Override
+    public String handleSomething(String input) {
+        return "Handle Something : " + input;
     }
 }
