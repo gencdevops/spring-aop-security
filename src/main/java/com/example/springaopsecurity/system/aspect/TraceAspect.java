@@ -18,4 +18,8 @@ public class TraceAspect {
 
     }
 
+    public static void test()2 {
+
+    }
+
 }
