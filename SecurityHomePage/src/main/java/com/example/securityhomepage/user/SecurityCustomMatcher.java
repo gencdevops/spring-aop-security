@@ -6,24 +6,26 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityCustomMatcher extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/" , "/home")
-                .permitAll()
-                .antMatchers("/login")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
+                    .antMatchers("/" , "/home")
+                    .permitAll()
+                    .antMatchers("/login")
+                    .authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/welcome")
-                .and()
-                .httpBasic();
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/welcome")
+                .permitAll()
+                    .and()
+                .logout()
+                    .logoutSuccessUrl("/logout")
+                    .invalidateHttpSession(true)
+                    .permitAll();
     }
 
     @Autowired

@@ -7,6 +7,7 @@
 <body>
 <h1>Spring Security</h1>
 <h2>Login Page</h2>
+Ileti : ${message}
 
 <form name="login" action="/login" method="post">
     <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token}" />
